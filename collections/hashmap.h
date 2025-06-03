@@ -14,17 +14,5 @@ typedef struct {
   int capacity;
 } HashMap;
 
-unsigned long hash(void *data, size_t size) {
-  unsigned long hash = 2166136261u;
-  const unsigned char *bytes = (const unsigned char *)data;
-
-  for (int x = 0; x < size; x++) {
-
-    hash ^= bytes[x];
-    hash *= 16777619;
-  }
-
-  return hash;
-}
 
 #endif
