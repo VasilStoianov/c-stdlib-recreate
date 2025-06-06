@@ -15,7 +15,6 @@ unsigned long hash_fnv1(void *data, size_t size) {
     hash ^= bytes[x];
     hash *= 16777619;
     hash &= 0xFFFFFFFFFFFFFFFF;
-
   }
 
   return hash;
@@ -32,7 +31,5 @@ unsigned long hash_djb2(char *str) {
 
   return hash;
 }
-
-
 
 #endif

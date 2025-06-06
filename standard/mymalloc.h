@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include "types.h"
 
 typedef struct mem_block {
   struct mem_block *next;
@@ -60,6 +61,11 @@ void b_free(void *ptr) {
   mem_block *curr_block = (mem_block *)ptr - 1;
   curr_block->free = 1;
   memset(curr_block + 1, 0, curr_block->size);
+}
+
+
+void* b_realloc(void* src,usize size){
+
 }
 
 #endif
